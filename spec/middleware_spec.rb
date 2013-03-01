@@ -117,7 +117,7 @@ describe EventMachine::HttpRequest do
   context "jsonify" do
     class JSONify
       def request(client, head, body)
-        [head, Yajl::Encoder.encode(body)]
+        [head, MultiJson.encode(body)]
       end
 
       def response(resp)
